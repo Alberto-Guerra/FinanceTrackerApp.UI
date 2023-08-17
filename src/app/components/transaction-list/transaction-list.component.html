@@ -1,0 +1,18 @@
+<div class="wrapper">
+    <div class="title-container">
+    <app-title-main [title]="title" ></app-title-main>
+    </div>  
+    <div class="main-container">
+        <div class="filters">
+            <button *ngIf="showTransactionsButton" (click)="showAll()"  style="color: rgba(0, 0, 0, 0.65)">Transactions</button>
+            <button *ngIf="showExpensesButton"(click)="showExpenses()" style="color:rgba(191, 53, 53, 0.65)">Expenses</button>
+            <button *ngIf="showIncomeButton" (click)="showIncome()" style="color: rgba(91, 170, 52, 0.65)">Income</button>
+        </div>  
+        <div class="transaction-list">
+            <app-transaction-item *ngFor="let transaction of transactionsToShow" [transaction]="transaction" ></app-transaction-item>
+        </div>
+        <div class ="button-container">
+            <app-button [text]="buttonText" [onClick]="createTransactionFunction"></app-button>
+        </div>
+    </div>
+</div>

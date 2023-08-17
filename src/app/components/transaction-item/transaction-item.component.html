@@ -1,0 +1,34 @@
+<div class="wrapper"
+[style.background-color] ="getAmount() < 0 ? badColorBackground : goodColorBackground"
+[style.border-color]="getAmount() < 0 ? badColorBorder : goodColorBorder"
+>
+<div class="primary-info">
+    <div class="title-and-button">
+        <fa-icon (click)="showSecondaryInfo()" [icon]="showSecondary ? faMinus : faPlus" ></fa-icon>
+        <h2 > 
+            {{transaction?.name}}       
+        </h2>
+        
+    </div>
+
+    <div class="amount">
+        <h2>
+            {{getAmountText()}} €
+        </h2>
+</div>
+</div>
+<div *ngIf="showSecondary" class="secondary-info"
+[style.background-color] ="getAmount() < 0 ? badColorBackground : goodColorBackground"
+[style.border-color]="getAmount() < 0 ? badColorBorder : goodColorBorder"
+>
+    <div class="date">
+        <p>
+            {{transaction?.date | date: 'dd/MM/yyyy'}}
+        </p>
+    </div>
+
+    <fa-icon (click)="editTransaction()" [icon]="faEdit" ></fa-icon>
+    <fa-icon (click)="deleteTransaction()" [icon]="faTrash" ></fa-icon>
+   
+</div>
+</div>
