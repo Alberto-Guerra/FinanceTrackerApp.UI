@@ -25,6 +25,11 @@ export class PageComponent {
 
       this.communicationService.getAllTransactions().subscribe((transactions : Transaction[]) => {
         this.allTransactions = transactions;
+        
+        this.transactionService.getCategories().subscribe((categories) => {
+          this.communicationService.setCategories(categories);
+        });
+      
         this.update();
       });
 
@@ -39,13 +44,12 @@ export class PageComponent {
 
       this.communicationService.setAllTransactions(sortByDate(transactions));
       this.communicationService.setTransactions(this.selector.getTransactions(this.allTransactions));
-
-
-      
       
 
       
   });
+
+  
   
   }
 

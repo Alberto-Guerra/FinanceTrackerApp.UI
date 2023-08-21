@@ -26,4 +26,12 @@ export class PageBarComponent {
       this.updateList.emit();
     }, 0);
   }
+
+
+  navigateToCategories(){
+    this.router.navigateByUrl('/categories');
+    setTimeout(() => {
+      this.updateList.emit();
+    }, 0);
+  }
 }

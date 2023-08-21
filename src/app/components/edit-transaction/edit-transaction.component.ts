@@ -18,30 +18,15 @@ export class EditTransactionComponent {
   transaction: TransactionSample = new TransactionSample();
   ngOnInit(): void {
     this.transaction.setTransaction(this.communicationService.getTransactionToEdit());
+    if(!this.transaction.name){
+      this.router.navigateByUrl('/');
+    }
   }
 
-  onSubmit() {
-    if(!this.transaction){
-      alert("Transaction is undefined");
-      return;
-    }
 
-    if(this.transaction.name == ''){
-      alert("Please enter name");
-      return;
-    }
-    if(this.transaction.amount == 0){
-      alert("Please enter amount");
-      return;
-    }
-
-    this.transactionService.updateTransaction(this.transaction.getTransaction()).subscribe((transactions : Transaction[]) => {
-      this.communicationService.setAllTransactions(transactions);
-      
-    });
-
-    
-    this.router.navigateByUrl('/');
-
+functionToPass : Function = (transaction : Transaction) => {
+  this.transactionService.updateTransaction(transaction).subscribe((transactions : Transaction[]) => {
+    this.communicationService.setAllTransactions(transactions);
+  });
 }
 }

@@ -6,3 +6,12 @@
     width: 100%;
     margin-top: 3px;
 }
+
+fa-icon{
+    cursor: pointer;
+    color:black;
+}
+
+fa-icon:hover{
+    color: #EE0474;
+}

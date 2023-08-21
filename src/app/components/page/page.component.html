@@ -4,7 +4,7 @@
   </div>
 
   <div class="balance-container">
-    <app-balance [time]="selector.getString()"  [spent]="selector.getSpent(allTransactions)"></app-balance>
+    <app-balance [time]="selector.getString()"  [spent]="selector.getSpent(allTransactions)"  [balance]="selector.getBalance(allTransactions)"></app-balance>
   </div>
 
   <div class="main-container">

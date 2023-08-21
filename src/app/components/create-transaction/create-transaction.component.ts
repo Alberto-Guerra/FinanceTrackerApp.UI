@@ -14,40 +14,16 @@ import { TransactionService } from 'src/app/services/transaction.service';
 })
 export class CreateTransactionComponent {
 
-  newTransaction: TransactionSample = new TransactionSample();
-
   constructor(private transactionService : TransactionService, private communicationService : CommunicationService, private router : Router) { }
 
-  onSubmit() {
-    if(!this.newTransaction.name){
-      alert("Please enter name");
-      return;
-    }
-    if(!this.newTransaction.amount){
-      alert("Please enter amount");
-      return;
-    }
-    if(!this.newTransaction.description){
-      this.newTransaction.description = ""
-    }
 
-
-    let transaction: Transaction = new Transaction();
-    transaction.name = this.newTransaction.name;
-    transaction.date = this.newTransaction.date;
-    transaction.amount = this.newTransaction.amount;
-    transaction.description = this.newTransaction.description;
-
+  functionToPass : Function = (transaction : Transaction) => {
     this.transactionService.addTransaction(transaction).subscribe((transactions : Transaction[]) => {
       this.communicationService.setAllTransactions(transactions);
-      
     });
-
-    
-    this.router.navigateByUrl('/');
-
   }
 
 }
+
 
 

@@ -14,7 +14,5 @@ button {
 }
 
 button:hover{
-    background: #3C3B3B;
-    width: 151.5px;
-    height: 50.5px; 
+    background: #EE0474; 
 }

@@ -19,11 +19,20 @@ import { MainContentComponent } from './components/main-content/main-content.com
 import { CreateTransactionComponent } from './components/create-transaction/create-transaction.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditTransactionComponent } from './components/edit-transaction/edit-transaction.component';
+import { FormComponent } from './components/form/form.component';
+import { CategoriesListComponent } from './components/categories-list/categories-list.component';
+import { CategoriesItemComponent } from './components/categories-item/categories-item.component';
+import { FormCategoryComponent } from './components/form-category/form-category.component';
+import { CreateCategoryComponent } from './components/create-category/create-category.component';
+import { EditCategoryComponent } from './components/edit-category/edit-category.component';
 
 const appRoutes : Routes = [
   {path: '', component: TransactionListComponent},
   {path: 'create-transaction', component: CreateTransactionComponent},
-  {path: 'edit-transaction', component: EditTransactionComponent},		
+  {path: 'edit-transaction', component: EditTransactionComponent},	
+  {path: 'categories', component: CategoriesListComponent},	
+  {path: 'create-category', component: CreateCategoryComponent},
+  {path: 'edit-category', component: EditCategoryComponent},
 ]
 
 
@@ -41,6 +50,12 @@ const appRoutes : Routes = [
     TitleMainComponent,
     MainContentComponent,
     CreateTransactionComponent,
+    FormComponent,
+    CategoriesListComponent,
+    CategoriesItemComponent,
+    FormCategoryComponent,
+    CreateCategoryComponent,
+    EditCategoryComponent,
 
   ],
   imports: [

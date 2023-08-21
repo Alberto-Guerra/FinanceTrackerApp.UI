@@ -1,0 +1,116 @@
+.wrapper {
+    width: 100%;
+    height: 100%;
+    
+
+}
+
+form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+select {
+    font-family: Kufam;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1.5px solid rgb(138, 138, 138);
+    width: 90%;
+    font-size: 0.8em;
+}
+
+select:focus {
+    border-bottom: 1.5px solid #EE0474;
+    outline: none;
+}
+
+fa-icon{
+    cursor: pointer;
+}
+fa-icon:hover {
+    color: #EE0474;
+}
+
+button{
+    font-family: Kufam;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover{
+    color: #EE0474;
+}
+
+p{
+    font-size: 0.5em;
+}
+
+.category{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.main-form{
+
+    height: 80%;
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+
+    
+
+}
+
+.form-group{
+    width: 80%;
+}   
+
+
+input {
+    font-family: Kufam;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1.5px solid rgb(138, 138, 138);
+    width: 100%;
+    font-size: 0.8em;
+}
+
+
+textarea {
+    max-height: 100px;
+    background-color: transparent;
+    width: 100%;
+    resize: none;
+    border: none;
+    border-bottom: 1.5px solid rgb(138, 138, 138);
+}
+
+input:focus,textarea:focus {
+    border-bottom: 1.5px solid #EE0474;
+    outline: none;
+}
+
+.button-container {
+    height: 20%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}

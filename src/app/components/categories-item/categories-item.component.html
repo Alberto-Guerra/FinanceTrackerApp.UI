@@ -1,0 +1,25 @@
+
+<div class="wrapper"
+>
+<div class="primary-info">
+    <div class="title-and-button">
+        <fa-icon (click)="showSecondaryInfo()" [icon]="showSecondary ? faMinus : faPlus" ></fa-icon>
+        <h2 > 
+            {{category.name}}       
+        </h2>
+        
+    </div>
+
+    <div class="amount">
+        <h2>
+            {{categorySpent}} € | {{percentage}}%
+        </h2>
+    </div>
+</div>
+<div *ngIf="showSecondary" class="secondary-info">
+
+    <fa-icon (click)="editCategory()" [icon]="faEdit" ></fa-icon>
+    <fa-icon (click)="deleteCategory()" [icon]="faTrash" ></fa-icon>
+   
+</div>
+</div>

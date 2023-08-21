@@ -1,27 +1,9 @@
 <div class="wrapper">
     <div class="title-container">
-        <app-title-main [title]="'New Transaction'" ></app-title-main>
+        <app-title-main [title]="'Edit Transaction'" ></app-title-main>
     </div>  
-
     <div class="main-container">
-        <form (ngSubmit)="onSubmit()">
-            <div class="form-group">
-                <input type="text" id="name" name="name" [(ngModel)]="transaction.name" placeholder="Name">
-              </div>
     
-            <div class="form-group">
-              <input type="number" id="amount" name="amount" [(ngModel)]="transaction.amount" placeholder="Amount">
-            </div>
-    
-            <div class="form-group">
-              <input type="date" id="date" name="date" [(ngModel)]="transaction.date">
-            </div>
-
-            <div class="form-group">
-                <input type="text" id="description" name="description" [(ngModel)]="transaction.description" placeholder="Description">
-              </div>
-    
-            <button type="submit">Submit</button>
-          </form>
+        <app-form [transaction]="transaction" [onSumbitFunction]="functionToPass" [submitButtonText]="'EDIT!'"></app-form>
     </div>
 </div>

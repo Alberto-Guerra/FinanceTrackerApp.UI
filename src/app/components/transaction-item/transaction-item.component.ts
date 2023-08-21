@@ -13,7 +13,6 @@ import { Router } from '@angular/router';
 export class TransactionItemComponent {
   @Input() transaction?: Transaction;
 
-  @Output() updateTransactionList = new EventEmitter<Transaction[]>();
 
   badColorBackground : string = "#F8B2B2";
   goodColorBackground : string = "#C9F8B2";
@@ -22,7 +21,6 @@ export class TransactionItemComponent {
   goodColorBorder : string = "#71DF3B";
 
   showSecondary : boolean = false;
-
 
 
   faMinus = faMinus;

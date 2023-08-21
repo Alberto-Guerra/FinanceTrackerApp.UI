@@ -1,8 +1,14 @@
 
 <div class="wrapper">
-    <div class="spent">
+    <fa-icon [icon]="faChevronLeft" (click)="goPrevious()"></fa-icon>       
+    <div class="spent" *ngIf="showDiv[0]">
         <h4>Spent {{time}}</h4>
         <h2> {{getSpent()}} € </h2>
     </div>
+    <div class="balance" *ngIf="showDiv[1]" >
+        <h4>Balance {{time}}</h4>
+        <h2> {{getBalance()}} € </h2>
+    </div>
+    <fa-icon [icon]="faChevronRight" (click)="goNext()"></fa-icon>    
     
 </div>

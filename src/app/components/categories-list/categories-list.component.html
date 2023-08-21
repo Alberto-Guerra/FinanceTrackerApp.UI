@@ -1,0 +1,14 @@
+<div class="wrapper">
+    <div class="title-container">
+    <app-title-main [title]="title + ' ' + selector.getString()" ></app-title-main>
+    </div>  
+    <div class="main-container">
+                
+        <div class="categories-list">
+            <app-categories-item *ngFor="let category of categories" [category]="category"  ></app-categories-item>
+        </div>
+        <div class ="button-container">
+            <app-button [text]="buttonText" [onClick]="createCategoryFunction"></app-button>
+        </div>
+    </div>
+</div>

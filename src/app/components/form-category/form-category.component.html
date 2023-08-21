@@ -1,0 +1,15 @@
+<div class="wrapper">
+<form (ngSubmit)="onSubmit()">
+    <div class="main-form">
+    <div class="form-group">
+      <input type="text" id="name" name="name" [(ngModel)]="category.name" placeholder="Name">
+    </div>
+    <div class="form-group">
+      <textarea id="description" name="description" [(ngModel)]="category.description" placeholder="Description"></textarea>
+    </div>
+    </div>
+    <div class="button-container">
+      <app-button [type]="'submit'" [text]="submitButtonText" ></app-button>
+    </div>
+</form>
+</div>

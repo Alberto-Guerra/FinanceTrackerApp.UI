@@ -10,5 +10,7 @@ export class ButtonComponent {
   @Input() text : string = "Button"
   @Input() color : string = "black"
 
+  @Input() type : string = "button"
+
   @Input() onClick : Function = () => {};
 }
