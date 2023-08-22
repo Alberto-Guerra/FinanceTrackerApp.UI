@@ -30,7 +30,7 @@ export class TransactionSample {
             transaction.id = this.id;
         }
         transaction.name = this.name;
-        transaction.date = this.date;
+        transaction.date = new Date(this.date).toISOString();
         transaction.amount = this.amount? this.amount : 0;
         transaction.description = this.description;
         transaction.categories = this.categories;
