@@ -1,7 +1,21 @@
 <div class="wrapper">
 
-    <button class="time-selector" (click)="returnDaySelector()"> Day </button>
-    <button class="time-selector" (click)="returnWeekSelector()"> Week </button>
-    <button class="time-selector" (click)="returnMonthSelector()"> Month </button>
+    
+
+    <div class="container" *ngIf="!custom">
+        <fa-icon class="icon" [icon]="faSliders" (click)="toggleCustom()"></fa-icon>
+        <button class="time-selector" (click)="returnDaySelector()"> Day </button>
+        <button class="time-selector" (click)="returnWeekSelector()"> Week </button>
+        <button class="time-selector" (click)="returnMonthSelector()"> Month </button>
+    </div>
+    <div class="container" *ngIf="custom">
+        <fa-icon class="icon" [icon]="faArrowLeft" (click)="toggleCustom()" ></fa-icon>
+        <div class="dates">
+            <input type="date" [(ngModel)]="startDate">
+            <p>-</p>
+            <input type="date" [(ngModel)]="endDate">
+        </div>
+        <fa-icon class="icon" [icon]="faFilter" (click)="customSelector()" ></fa-icon>
+    </div>
 
 </div>

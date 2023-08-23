@@ -1,8 +1,10 @@
 <div class="wrapper">
   <a (click)="navigateToHome()">
     <fa-icon [icon]="faHome"></fa-icon>
+    <h3 *ngIf="!mobileMode">Home</h3>
   </a>
   <a (click)="navigateToCategories()">
     <fa-icon [icon]="faCategories"></fa-icon>
+    <h3 *ngIf="!mobileMode">Categories</h3>
   </a>
 </div>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Transaction } from 'src/app/models/Transaction';
 import { CommunicationService } from 'src/app/services/communication-service.service';
 import { TimeSelector } from 'src/app/services/time-selectors/time-selector';
@@ -11,7 +11,12 @@ import { TransactionService } from 'src/app/services/transaction.service';
   styleUrls: ['./page.component.css']
 })
 export class PageComponent {
+
+ 
+
   selector : TimeSelector = new WeekSelector();
+
+  @Input() mobileMode : boolean = window.innerWidth < 900;
 
   allTransactions : Transaction[] = [];
   transactions : Transaction[] = [];
@@ -25,7 +30,7 @@ export class PageComponent {
 
       this.communicationService.getAllTransactions().subscribe((transactions : Transaction[]) => {
         this.allTransactions = transactions;
-        
+
         this.transactionService.getCategories().subscribe((categories) => {
           this.communicationService.setCategories(categories);
         });

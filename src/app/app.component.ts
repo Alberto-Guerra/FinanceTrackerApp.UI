@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 
 
 @Component({
@@ -8,8 +8,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
  
+  mobileMode : boolean = false;
+  
+ngOnInit() {
+
+  this.mobileMode = window.innerWidth < 900;
+}
 
 
+@HostListener('window:resize', ['$event'])
+onResize() {
+
+    this.mobileMode = window.innerWidth < 900;
 
 
+}
 }

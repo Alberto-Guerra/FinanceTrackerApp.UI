@@ -48,6 +48,7 @@ body {
   align-items: center;
   width: 100vw ;
   height: 100vh;
+  
 }
 
 .wrapper {
@@ -57,9 +58,7 @@ body {
   justify-content: center;
   align-items: center;
 
+
 }
 
-html {
-  height: 100vh;
-  width: 100%;
-}
+

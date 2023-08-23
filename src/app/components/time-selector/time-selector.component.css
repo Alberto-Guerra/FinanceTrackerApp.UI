@@ -1,6 +1,11 @@
 .wrapper{
     width: 100%;
     height: 100%;
+}
+
+.container{
+    width: 100%;
+    height: 100%;
 
     display: flex;
 
@@ -20,4 +25,31 @@
 .time-selector:hover {
     text-decoration: wavy underline;
     color: #EE0474;
+}
+
+.dates{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+fa-icon:hover{
+    color: #EE0474;
+    cursor: pointer;   
+}
+
+input {
+    border: none;
+    background-color: transparent;
+    font-family: 'Kufam' , sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+p {
+    font-weight: 600;
 }

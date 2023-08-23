@@ -7,11 +7,32 @@
     margin-top: 3px;
 }
 
-fa-icon{
-    cursor: pointer;
-    color:black;
+h3{
+    font-size: 0.9em;
 }
 
-fa-icon:hover{
+a{
+    display: flex;
+    cursor: pointer;
+    color:black;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0px 10px;
+
+}
+
+a:hover{
     color: #EE0474;
+}
+
+@media screen and (min-width: 900px) {
+    .wrapper{
+        margin-top: 0;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+       /* border-right: 1px solid rgba(0, 0, 0, 0.2); */
+    }
 }

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { faHouse,faList } from '@fortawesome/free-solid-svg-icons';
 import { filter } from 'rxjs';
@@ -14,6 +14,7 @@ export class PageBarComponent {
   faCategories = faList;
 
   @Output() updateList : EventEmitter<any> = new EventEmitter<any>();
+  @Input() mobileMode : boolean = window.innerWidth < 900;
 
   constructor(private router: Router) {
  
@@ -26,7 +27,6 @@ export class PageBarComponent {
       this.updateList.emit();
     }, 0);
   }
-
 
   navigateToCategories(){
     this.router.navigateByUrl('/categories');

@@ -1,16 +1,24 @@
 <div class="app-container">
-  <div class="time-container">
-    <app-time-selector (selectorChanged)="updateSelector($event)"></app-time-selector>
+  <div class="top-container">
+  <aside class="pcbar-container" *ngIf="!mobileMode">
+    <app-page-bar [mobileMode]="mobileMode" (updateList)="update()"></app-page-bar>
+  </aside>
+    <div class="time-balance-wrapper">
+      <div class="time-container">
+        <app-time-selector (selectorChanged)="updateSelector($event)"></app-time-selector>
+      </div>
+
+
+      <div class="balance-container">
+        <app-balance [time]="selector.getString()"  [spent]="selector.getSpent(allTransactions)"  [balance]="selector.getBalance(allTransactions)"></app-balance>
+      </div>
+    </div>  
   </div>
 
-  <div class="balance-container">
-    <app-balance [time]="selector.getString()"  [spent]="selector.getSpent(allTransactions)"  [balance]="selector.getBalance(allTransactions)"></app-balance>
-  </div>
-
-  <div class="main-container">
+  <main class="main-container">
     <app-main-content ></app-main-content>
-  </div>
-  <div class="bar-container">
-    <app-page-bar (updateList)="update()"></app-page-bar>
+  </main>
+  <div *ngIf="mobileMode" class="bar-container">
+    <app-page-bar [mobileMode]="mobileMode" (updateList)="update()"></app-page-bar>
   </div>
 </div>
