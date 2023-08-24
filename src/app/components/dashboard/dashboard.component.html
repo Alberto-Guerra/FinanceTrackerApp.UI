@@ -1,0 +1,11 @@
+<div class="wrapper">
+    <div class="title-container">
+    <app-title-main [title]="title" ></app-title-main>
+    </div>  
+    <div class="main-container" >
+        <select [(ngModel)]="actualGraphIndex" (change)="onGraphChange()" >
+        <option *ngFor="let n of graphIndexs" [value]="n">{{graphs[n].name}}</option>
+        </select>
+        <div id="chartContainer"></div>
+    </div>  
+</div>

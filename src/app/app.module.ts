@@ -25,9 +25,13 @@ import { CategoriesItemComponent } from './components/categories-item/categories
 import { FormCategoryComponent } from './components/form-category/form-category.component';
 import { CreateCategoryComponent } from './components/create-category/create-category.component';
 import { EditCategoryComponent } from './components/edit-category/edit-category.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+
+import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 
 const appRoutes : Routes = [
-  {path: '', component: TransactionListComponent},
+  {path: '', component: DashboardComponent},
+  {path: 'transactions', component: TransactionListComponent},
   {path: 'create-transaction', component: CreateTransactionComponent},
   {path: 'edit-transaction', component: EditTransactionComponent},	
   {path: 'categories', component: CategoriesListComponent},	
@@ -56,6 +60,7 @@ const appRoutes : Routes = [
     FormCategoryComponent,
     CreateCategoryComponent,
     EditCategoryComponent,
+    DashboardComponent,
 
   ],
   imports: [
@@ -65,7 +70,8 @@ const appRoutes : Routes = [
     FormsModule,
     FontAwesomeModule,
     RouterModule.forRoot(appRoutes),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    CanvasJSAngularChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,9 +1,13 @@
 <div class="wrapper">
-  <a (click)="navigateToHome()">
-    <fa-icon [icon]="faHome"></fa-icon>
-    <h3 *ngIf="!mobileMode">Home</h3>
+  <a (click)="navigateTo('/')">
+    <fa-icon [icon]="faChartSimple"></fa-icon>
+    <h3 *ngIf="!mobileMode">Dashboard</h3>
   </a>
-  <a (click)="navigateToCategories()">
+  <a (click)="navigateTo('/transactions')">
+    <fa-icon [icon]="faMoneyBill"></fa-icon>
+    <h3 *ngIf="!mobileMode">Transactions</h3>
+  </a>
+  <a (click)="navigateTo('/categories')">
     <fa-icon [icon]="faCategories"></fa-icon>
     <h3 *ngIf="!mobileMode">Categories</h3>
   </a>

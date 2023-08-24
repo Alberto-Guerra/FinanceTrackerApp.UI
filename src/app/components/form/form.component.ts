@@ -72,7 +72,7 @@ export class FormComponent {
       });
     } */
 
-    this.router.navigateByUrl('/');
+    this.router.navigateByUrl('/transactions');
 
 
   }

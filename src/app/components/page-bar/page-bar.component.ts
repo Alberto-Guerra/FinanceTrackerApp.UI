@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
-import { faHouse,faList } from '@fortawesome/free-solid-svg-icons';
-import { filter } from 'rxjs';
+import {Router } from '@angular/router';
+import { faHouse,faList, faMoneyBill, faChartSimple } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -12,6 +11,8 @@ import { filter } from 'rxjs';
 export class PageBarComponent {
   faHome = faHouse;
   faCategories = faList;
+  faMoneyBill = faMoneyBill;
+  faChartSimple = faChartSimple;
 
   @Output() updateList : EventEmitter<any> = new EventEmitter<any>();
   @Input() mobileMode : boolean = window.innerWidth < 900;
@@ -21,15 +22,8 @@ export class PageBarComponent {
   }
 
 
-  navigateToHome(){
-    this.router.navigateByUrl('/');
-    setTimeout(() => {
-      this.updateList.emit();
-    }, 0);
-  }
-
-  navigateToCategories(){
-    this.router.navigateByUrl('/categories');
+  navigateTo(url : string){
+    this.router.navigateByUrl(url);
     setTimeout(() => {
       this.updateList.emit();
     }, 0);
