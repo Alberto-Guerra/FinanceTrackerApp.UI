@@ -29,7 +29,11 @@ export class DashboardComponent {
   ngOnInit(){
 
 	this.graphs = [new MonthBarGraph(this.service), new CategoryPieGraph(this.service)];
-	this.graphIndexs = [0,1];
+  this.graphIndexs = [];
+  for (let i = 0; i < this.graphs.length; i++) {
+    this.graphIndexs.push(i);
+  }
+  
 	this.actualGraph = this.graphs[this.actualGraphIndex];
 	this.options = this.actualGraph.getOptions();
 

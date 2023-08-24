@@ -41,7 +41,7 @@ export class CategoryPieGraph implements Graph {
             exportEnabled: true,
             backgroundColor: "transparent",
             title: {
-                text: 'Spent Distribution Per Category',
+                text: 'Spent Distribution',
                 fontFamily: "Kufam",
                 fontWeight: "700",
             },

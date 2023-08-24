@@ -35,15 +35,22 @@ export class MonthBarGraph implements Graph {
             animationEnabled: true,
             axisY: {
                 includeZero: true,
-                valueFormatString: "####€"
+                valueFormatString: "####€",
+                stripLines: [{
+                    value: 0,
+                    color: "#990000",
+                    thickness: 2
+                  }],
+                
             },
             axisX:{
-                interval: 1
+                
+                interval: 1,
+                
              },
             data: [{
                 type: ChartType.Column,
-                indexLabelFontColor: '#5A5757',
-                yValueFormatString: "####€",
+                yValueFormatString: "####.##€",
                 dataPoints: this.calculateDataPoints(this.transactions)
             }]
         }
@@ -56,8 +63,7 @@ export class MonthBarGraph implements Graph {
 
         var dataPoints : {label : string, y : number, indexLabel? : string}[] = [];
 
-        var months : string[] = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-        //var months : number[] = [1,2,3,4,5,6,7,8,9,10,11,12]
+        var months : string[] = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 
         var spentPerMonth : number[] = [0,0,0,0,0,0,0,0,0,0,0,0];
 
@@ -70,11 +76,9 @@ export class MonthBarGraph implements Graph {
         );
 
         for(var i = 0; i < spentPerMonth.length; i++){
-            if(spentPerMonth[i] != 0)
-            dataPoints.push({label : months[i], y : spentPerMonth[i], indexLabel : spentPerMonth[i] + "€"});
-            else {
-                dataPoints.push({label : months[i], y : spentPerMonth[i]});
-            }
+            
+            dataPoints.push({label : months[i], y : spentPerMonth[i]});
+            
         }
         
         return dataPoints;
