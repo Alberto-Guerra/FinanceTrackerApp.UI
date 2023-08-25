@@ -1,9 +1,9 @@
 <div class="wrapper">
     <div class="title-container">
-    <app-title-main [title]="title + ' ' + selector.getString()" ></app-title-main>
+    <app-title-main [title]="title" ></app-title-main>
     </div>  
     <div class="main-container">
-                
+        <div class="invisible"></div>
         <div class="categories-list">
             <app-categories-item *ngFor="let category of categories" [category]="category"  ></app-categories-item>
         </div>

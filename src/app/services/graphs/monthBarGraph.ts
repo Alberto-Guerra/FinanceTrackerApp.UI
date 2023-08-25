@@ -15,7 +15,7 @@ export class MonthBarGraph implements Graph {
         return this.options;
     }
 
-    constructor(private service : CommunicationService) {
+    constructor(service : CommunicationService) {
 
         service.getAllTransactions().subscribe((transactions) => {
             this.transactions = transactions;

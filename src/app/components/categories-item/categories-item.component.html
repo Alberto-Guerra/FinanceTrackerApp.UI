@@ -1,18 +1,20 @@
 
-<div class="wrapper"
->
+<div class="wrapper" [style.background]="'linear-gradient(to right, ' + category.color + '  ' + getPercentage() + '%, transparent 1%)'">
 <div class="primary-info">
     <div class="title-and-button">
         <fa-icon (click)="showSecondaryInfo()" [icon]="showSecondary ? faMinus : faPlus" ></fa-icon>
         <h2 > 
-            {{category.name}}       
+            {{category.name}} - {{category.budget}} €      
         </h2>
         
     </div>
 
     <div class="amount">
         <h2>
-            {{categorySpent}} € | {{percentage}}%
+            Spent {{categorySpent}} € | {{getPercentage()}}%
+        </h2>
+        <h2 *ngIf="categorySpent / category.budget! > 1">
+            OVERSPENT!
         </h2>
     </div>
 </div>
@@ -20,6 +22,6 @@
 
     <fa-icon (click)="editCategory()" [icon]="faEdit" ></fa-icon>
     <fa-icon (click)="deleteCategory()" [icon]="faTrash" ></fa-icon>
-   
 </div>
+   
 </div>

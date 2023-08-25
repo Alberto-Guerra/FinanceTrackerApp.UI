@@ -6,6 +6,8 @@ export class Category {
     id?: number;
     name: string = "";
     description: string = "";
+    budget?: number;
+    color: string = "transparent";
     transactions: Transaction[] = [];
 
     constructor(values: Object = {}) {

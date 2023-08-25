@@ -5,7 +5,14 @@
       <input type="text" id="name" name="name" [(ngModel)]="category.name" placeholder="Name">
     </div>
     <div class="form-group">
+      <input type="number" id="budget" name="budget" [(ngModel)]="category.budget" placeholder="Budget Limit">
+    </div>
+    <div class="form-group">
       <textarea id="description" name="description" [(ngModel)]="category.description" placeholder="Description"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="color">Color : </label>
+      <input type="color" id="color" name="color" placeholder="#FFFFFF" [(ngModel)]="category.color" >
     </div>
     </div>
     <div class="button-container">

@@ -78,8 +78,13 @@ p{
 
 .form-group{
     width: 80%;
+    display: flex;
+    align-items: center;
 }   
 
+#color {
+    width: 40px;
+}
 
 input {
     font-family: Kufam;

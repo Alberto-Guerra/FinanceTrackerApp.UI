@@ -23,6 +23,20 @@ export class FormCategoryComponent {
       return;
     }
 
+    if(!this.category.color){
+      this.category.color = "transparent"
+    }
+
+    if(!this.category.budget){
+      alert("Please enter budget");
+      return;
+    }
+
+    if(this.category.budget < 0){
+      alert("Budget cannot be negative");
+      return;
+    }
+
     if(!this.category.description){
       this.category.description = ""
     }

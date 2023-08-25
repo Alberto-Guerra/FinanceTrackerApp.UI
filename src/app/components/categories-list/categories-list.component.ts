@@ -14,18 +14,14 @@ import { Category } from 'src/app/models/Category';
 })
 export class CategoriesListComponent {
   
-  title : string = "Category Spent";
+  title : string = "Categories";
   buttonText : string = "New Category";
 
-  selector: TimeSelector = new WeekSelector();
-  transactions : Transaction[] = [];
-
-  totalSpent : number = 0;
   categories : Category[] = [];
 
   createCategoryFunction : Function = () => {this.router.navigateByUrl('/create-category')};
 
-  constructor(private transactionService : TransactionService ,private communicationService : CommunicationService, private router: Router) {
+  constructor(private communicationService : CommunicationService, private router: Router) {
 
   }
 
@@ -35,15 +31,14 @@ export class CategoriesListComponent {
       this.categories = categories;
     });
 
-    this.communicationService.getTransactions().subscribe((transactions : Transaction[]) => {
-      this.transactions = transactions;
-      this.totalSpent = this.selector.getSpent(this.transactions);
+    this.communicationService.getAllTransactions().subscribe(() => {
+
+      this.communicationService.getCategories().subscribe((categories : Category[]) => {
+        this.categories = categories;
+      });
       
     });
-    this.communicationService.getSelector().subscribe((selector : TimeSelector) => {
-      this.selector = selector;
-      this.totalSpent = this.selector.getSpent(this.transactions);
-    });
+
 
 
   }

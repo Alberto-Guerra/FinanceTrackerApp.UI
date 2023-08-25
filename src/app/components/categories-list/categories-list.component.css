@@ -49,6 +49,9 @@
 
 
 }
+.invisible{
+    height: 10%;
+}
 
 .button-container{
     height: 20%;

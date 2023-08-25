@@ -7,6 +7,7 @@ import { WeekSelector } from 'src/app/services/time-selectors/week-selector';
 import { faPlus,faMinus, faEdit,faTrash} from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 import { TransactionService } from 'src/app/services/transaction.service';
+import { MonthSelector } from 'src/app/services/time-selectors/month-selector';
 
 @Component({
   selector: 'app-categories-item',
@@ -15,21 +16,18 @@ import { TransactionService } from 'src/app/services/transaction.service';
 })
 export class CategoriesItemComponent {
 
-  @Input() category : Category = new Category();
-  totalSpent : number = 0;
-
-  selector : TimeSelector = new WeekSelector();
-  transactions : Transaction[] = [];
-  totalTransactions : Transaction[] = [];
-  categorySpent : number = 0;
-  percentage : string = '0';
-
-
+  /* Icons */
   faMinus = faMinus;
   faPlus = faPlus;
   faEdit = faEdit;
   faTrash = faTrash;
 
+
+  @Input() category : Category = new Category();
+
+  selector : TimeSelector = new MonthSelector();
+
+  categorySpent : number = 0;
 
   constructor(private transactionService : TransactionService,private communicationService : CommunicationService, private router : Router){
 
@@ -38,41 +36,18 @@ export class CategoriesItemComponent {
   ngOnInit(){
     
 
-    this.communicationService.getSelector().subscribe((selector : TimeSelector) => {
-      this.selector = selector;
-      this.transactions = this.selector.getTransactions(this.category.transactions);
-      this.totalSpent = -1 * this.selector.getSpent(this.totalTransactions);
-      this.calculateSpent();
-      this.calculatePercentage();
-    });
+    this.communicationService.getAllTransactions().subscribe((transactions : Transaction[]) => {
 
-    this.communicationService.getTransactions().subscribe((transactions : Transaction[]) => {
-
-      this.totalTransactions = transactions;
-      this.totalSpent = -1 * this.selector.getSpent(this.totalTransactions);
       this.calculateSpent();
-      this.calculatePercentage();
     });
   }
 
   calculateSpent() : void {
-    this.categorySpent = 0;
-    this.transactions.forEach((transaction : Transaction) => {
-      if(transaction.amount < 0){
-        this.categorySpent +=  -1 * transaction.amount;
-      }
-    });
+    this.categorySpent = -1 * this.selector.getSpent(this.category.transactions);
   }
 
-  calculatePercentage() : void {
-
-    if(this.totalSpent == 0){
-      this.percentage = '0';
-      return;
-    }
-
-    this.percentage = ((this.categorySpent / this.totalSpent) * 100).toFixed(0);
-
+  getPercentage() : string {
+    return ((this.categorySpent / this.category.budget!) * 100).toFixed(2);
   }
 
 
