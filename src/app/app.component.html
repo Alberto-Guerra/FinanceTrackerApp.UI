@@ -5,7 +5,8 @@
 </head>
 <body>
   <div class="wrapper">
-  <app-page [mobileMode]="mobileMode" ></app-page>
+  <app-login *ngIf="!isLoggedIn()"></app-login>
+  <app-page [mobileMode]="mobileMode" *ngIf="isLoggedIn()"></app-page>
   </div>
 </body>
 

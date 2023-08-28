@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Transaction } from 'src/app/models/Transaction';
+import { AuthService } from 'src/app/services/auth.service';
 import { CommunicationService } from 'src/app/services/communication-service.service';
 import { TimeSelector } from 'src/app/services/time-selectors/time-selector';
 import { WeekSelector } from 'src/app/services/time-selectors/week-selector';
@@ -53,7 +54,6 @@ export class PageComponent {
 
       
   });
-
   
   
   }
@@ -68,6 +68,8 @@ export class PageComponent {
     this.communicationService.setSelector(selector);
   ;
 }
+
+
 
   
 }

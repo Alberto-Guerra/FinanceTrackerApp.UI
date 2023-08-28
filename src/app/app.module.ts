@@ -28,6 +28,8 @@ import { EditCategoryComponent } from './components/edit-category/edit-category.
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const appRoutes : Routes = [
   {path: '', component: DashboardComponent},
@@ -61,6 +63,8 @@ const appRoutes : Routes = [
     CreateCategoryComponent,
     EditCategoryComponent,
     DashboardComponent,
+    LoginComponent,
+    RegisterComponent,
 
   ],
   imports: [

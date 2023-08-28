@@ -1,5 +1,6 @@
 export const environment = {
 
-    apiUrl: 'https://financetrackerapi.up.railway.app/api',
+    apiUrl: 'https://localhost:7022/api',
 
 };
+// https://financetrackerapi.up.railway.app/api

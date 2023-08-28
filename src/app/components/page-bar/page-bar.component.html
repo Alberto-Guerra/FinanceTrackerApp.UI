@@ -11,4 +11,8 @@
     <fa-icon [icon]="faCategories"></fa-icon>
     <h3 *ngIf="!mobileMode">Categories</h3>
   </a>
+  <a (click)="logout()">
+    <fa-icon [icon]="faLogout"></fa-icon>
+    <h3 *ngIf="!mobileMode">Log Out</h3>
+  </a>
 </div>
