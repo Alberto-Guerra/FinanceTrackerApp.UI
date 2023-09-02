@@ -12,7 +12,8 @@ export class WeekSelector extends BaseSelector {
     public getAbstractTransactions(transactions: Transaction[]): Transaction[] {
         return transactions.filter(transaction => {
             const transactionDate = new Date(transaction.date?.split('T')[0] + "T00:00:00");
-            const today = new Date();
+            const today = new Date( new Date().toISOString().split('T')[0] + "T00:00:00" );
+
             return transactionDate.getFullYear() === today.getFullYear() &&
                 this.getWeekNumber(transactionDate) === this.getWeekNumber(today);
         });
