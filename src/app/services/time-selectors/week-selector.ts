@@ -22,7 +22,13 @@ export class WeekSelector extends BaseSelector {
     private getWeekNumber(date: Date): number {
         const firstDayOfYear = new Date(date.getFullYear(), 0, 1);
         const pastDaysOfYear = (date.getTime() - firstDayOfYear.getTime()) / 86400000; // 1000ms*60s*60m*24h = 86400000ms
-        return Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7);
+
+        
+
+       
+        return Math.ceil((pastDaysOfYear + firstDayOfYear.getDay()) / 7);
+
+         
     }
 
 }
