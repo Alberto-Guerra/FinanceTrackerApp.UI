@@ -57,14 +57,15 @@ export class CategoryPieGraph implements Graph {
         return options;
     }
 
-    calculateDataPoints(categories: Category[]): { name: string; y: number;}[] {
+    calculateDataPoints(categories: Category[]): { name: string; y: number; color : string}[] {
 
-        var dataPoints : {name : string, y : number}[] = [];
+         var dataPoints : {name : string, y : number, color: string}[] = [];
 
 
         categories.forEach((category) => {
-            dataPoints.push({ name: category.name, y: this.calculateCategorySpent(category) })
+            dataPoints.push({ name: category.name, y: this.calculateCategorySpent(category),color: category.color })
         });
+
 
 
         return dataPoints; 
